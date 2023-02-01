@@ -1,10 +1,38 @@
 ﻿@page
 @model AbbyWeb.Pages.Categories.IndexModel
 
+<h2 class="text-primary"> Category </h2>
+<a asp-page="Create" class="btn btn-primary"> Create New Category</a>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+      
+            <th>
+                Display Order
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var x in Model.Categories)
+        {        
+        <tr>
+            <td>
+                @x.Name
+            </td>
+               
+            <td>
+                @x.DisplayOrder 
+            </td>
+        </tr>
+            
+        }
+    </tbody>
 
-    @foreach(var x in Model.Categories)
-    {
-        <p>@x.Name</p>
-        <br />
-    }
+
+</table>
+
+   
    

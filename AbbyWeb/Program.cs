@@ -11,7 +11,7 @@ namespace AbbyWeb
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddRazorPages();
+            builder.Services.AddRazorPages();//.AddRazorRuntimeCompilation();
             //add db service 
             builder.Services.AddDbContext<ApplicationDbContext>(Options => Options.UseSqlServer(
                 builder.Configuration.GetConnectionString("connectDatabase"))
