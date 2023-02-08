@@ -8,18 +8,30 @@
             <hr />
 
         </div>
-        <div class="mb-3">
-            Name:
-            <input type="text" name="categoryName" />
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">            
+            <label asp-for="@Model.category.Name"></label>
+            <input asp-for="@Model.category.Name" class="form-control" />
+            <span asp-validation-for="@Model.category.Name" class="text-danger"></span>
 
         </div>
         <div class="mb-3">
-            Display Order:
-            <input type="text" name="displayOrder" />
-
+            <label asp-for="@Model.category.DisplayOrder"></label>
+            <input asp-for="@Model.category.DisplayOrder" class="form-control" />
+            <span asp-validation-for="@Model.category.DisplayOrder" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:150px;">Create new Category</button>
+        
+        <button type="submit" class="btn btn-primary" style="width:150px;">Create Category</button>
     </div> 
 
+<!-- <partial name="_VaidationScriptsPartial"/>  this will  used if we have code instead of script-->
 
 </form>
+
+<!--for scripts we have to do like this -->
+<!--this is javascript code -->
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
